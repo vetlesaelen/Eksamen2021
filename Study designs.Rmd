@@ -1,0 +1,85 @@
+---
+title: "Study designs"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduksjon
+
+ 
+
+I denne oppgaven er temaet VO2maks for utrente. Det er valgt ut fem artikler som blir brukt som bakgrunn for disse undersøkelsene [@chtara2005; @lo2011; @nybo2010; @trapp2008; @warburton2004]. Ingen av disse studiene har som hovedmål å undersøke utelukkende hvordan VO~2~maks endres over en treningsperiode, men alle studiene bruker det som en del av testbatteriet sitt. Tre av studiene ser på ulike varianter av hvordan trening er helsefremmende. Nybo et al. (2010) undersøker hvordan intervalltrening og tradisjonell trening fremmer helse. Trapp et al. (2008) undersøker hvilken effekt høyintensiv intervalltrening har på fett tap og insulinverdier i hvile hos kvinner. Lo et al. (2011) undersøker hvordan trening og avtrening påvirker kroppssammensetning og fysisk prestasjon i unge menn.  De to siste studiene hadde en litt annen tilnærming og problemstilling enn de foregående tre. Chtara et al. (2005) undersøkte samtidig styrke og utholdenhetstrenings effekt på aerob prestasjon og kapasitet. Og Warburton et al. (2004) undersøkte blod volum ekspansjon og kardiorespiratorisk funksjon.
+
+ 
+
+# Problemstilling
+
+ 
+
+Selv om alle studiene har satt seg ut å teste forskjellige problemstillinger svarer alle til en viss grad på den problemstillingen som man prøver å besvare i denne oppgaven. Alle studiene bruker to eller flere treningsgrupper som trener forskjellig, og tester VO~2~maks før og etter, men bare Lo et al. (2010) har det med som en del av hypotesen, hvor man ønsker å undersøke endringen. Det er to av artiklene som fremstiller en hypotese [@lo2011; @warburton2004], de tre andre studiene ønsker å undersøke effekten en intervensjon har på ulike parameter.
+
+ 
+
+ 
+
+ 
+
+# Metode
+
+Alle studiene var randomisert kontrollert studie (RCT-studie).
+Denne type studie er konstruert for å måle effekt av tiltak. Man har vanligvis to eller flere grupper, og man sammenligner disse. Gruppene som blir sammenlignet bør være så like som mulig med hensyn til alle variabler som kan påvirke utfallet av studien. Måten man oppnår dette på er å fordele dem tilfeldig
+i de ulike gruppe. En typisk RCT-studie består av en kontrollgruppe og en tiltaksgruppe. I disse artiklene har man en eller flere grupper som gjennomfører ulike treningsintervensjoner, og en kontrollgruppe som ikke gjør
+det. Studien forgår over en forhåndsgitt intervensjonsperiode, både før og etter perioden sammenlignes gruppene, og man utforsker forskjeller på gruppene. [@randomis] Av de ulike artiklene som blir undersøkt i denne rapporten, har alle en kontrollgruppe, men det varierer hvor mange intervensjonsgrupper de bruker.
+Grunnen til at man likevel har en kontrollgruppe er på grunn av at man skal kunne se på fremgangen til hver enkelt gruppe med tanke på å ikke trene. Dette er en fordel i alle disse studiene da man ikke bare ønsker å se på forskjellen mellom de ulike intervensjonene i forhold til hverandre, men og alene.
+
+ 
+
+Intervensjonsperiodene i de ulike studiene varierte noe, men
+flertallet av studiene hadde 12 uker [@nybo2010; @chtara2005; @warburton2004]. Trapp et al. (2008) hadde 15 uker, og Lo et al. (2011) hadde 24 uker intervensjon. Alle studiene hadde og som mål og få trent 3 ganger i uka under intervensjonsperiodene,
+men godtok at man hadde fullført en viss prosent, slik at alle gruppene i alle prosjektene trente mellom 2 og 3 ganger i uken. Alle studiene hadde minst 8 deltakere i hver gruppe.
+
+ 
+
+ Det blir ikke sagt noe om hvorvidt dette er et representativt utvalg i noen av studiene, men det er ingen forskjeller ved pretest i noen av studiene. I flere av studiene blir det brukt en enveis eller toveis ANOVA for å gjøre de statistiske beregningene
+[@lo2011; @nybo2010; @warburton2004]. Dette blir brukt fordi man i utgangspunktet kan sammenligne forskjeller mellom flere grupper samtidig. I en enveis ANOVA har man
+en nullhypotese, men kan teste flere grupper samtidig mot nullhypotesen. Mens i en toveis ANOVA har man muligheten til å legge inn flere ulike nivåer man tester for, dette betyr at man kan teste for flere forskjellige nullhypoteser på flere forskjellige grupper samtidig. Det er flere faktorer som må ligge til
+grunn for at man skal kunne bruke en ANOVA test. Man må ha en normaldistribuert fordeling, gruppene må ha lik sample size, og variasjonene i gruppene må være like. [@anovate] Dette er for å skape så stor statistisk styrke som mulig, for å øke sannsynligheten for å unngå falske positive svar. Signifikansnivået i de ulike studiene ble satt til p \< 0,05.
+
+ 
+
+Det var bare en av studiene som har med VO~2~maks
+i hypotesen sin [@lo2011], og det er bare to av studiene som fremstiller en hypotese @warburton2004 Til tross for dette bruker alle VO~2~maks som en del av testbatteriet sitt både ved pre og ved post. Dette gjør at alle studiene svarer på hvorvidt dette blir påvirket av intervensjonen de gjennomfører. Alle studiene svarer på hypotesen/problemstillingen sin gjennom å gjennomføre tester før og etter intervensjonen, og analysere forskjellen i endringene mellom gruppene.  
+
+# Resultat
+
+Alle studiene svarer på sin egen problemstilling, og
+tester de variablene som inngår i hypotesen eller problemstillingen. De tester og andre variabler som for eksempel VO~2~maks, som i 4 av 5 studier ikke inngår i hypotesen. Dette er noe man kan observere med spesielt innenfor fagfeltet idrettsforskning. Det blir gjennomført store testprotokoller før og
+etter intervensjoner, mye større testbatterier enn hva som bør være nødvendig for å kunne svare på problemstillingen/hypotesen. En av grunnene til at dette
+kan bli gjort er fordi man ønsker å presentere flere resultater når man først gjennomfører en intervensjon. Det kan både gjelde for i samme artikkel, dataene kan og bli overført til å nye artikler.
+
+ 
+
+En av grunnene til at dette kan være problematisk er at
+man øker sannsynligheten for falske positive svar. For å ha høyest mulig statistisk styrke i dataene, bør man konstruere tester og intervensjoner som er designet for å finne svar på en hypotese. Om man derimot lager seg nye hypoteser etter man har samlet inn data, senkes den statistiske styrken til
+dataene, og da kan sannsynligheten for falske positive resultater øke. Bakgrunnen for valget av da artiklene som er brukt i denne oppgaven er at man har testet økning i VO~2~maks for utrente, men når bare en av studiene har det som en del av sin hypotese, kan det være vanskeligere å trekke konklusjoner fra funnene som man presenterer da studiene ikke er designet for å finne ut av dette.
+
+ 
+
+ 
+
+# Konklusjon
+
+ 
+
+Alle studiene konkluderte med at de hadde funnet ut at hypotesen var delvis eller helt rett. Alle studiene konkluderte med at den gruppa som hadde trent høyintensivt eller hadde trent styrke hadde den beste helseeffekten, det var ikke alle de testede variablene man fikk signifikante funn, men man fikk uten unntak størst økning i VO~2~maks på den gruppa som hadde trent intervalltrening. Det var kun Lo et al (2011) som konkluderte med hvilken praktisk betydning funnene deres kunne ha for resten av befolkningen. Alle de andre studiene konkluderte med om man hadde svart på hypotesen eller problemstillingen sin.
+
+# Kilder
+
+ 

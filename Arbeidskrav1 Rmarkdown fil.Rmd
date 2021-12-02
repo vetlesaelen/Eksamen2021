@@ -1,0 +1,83 @@
+---
+title: "Arbeidskrav1"
+author: "Kristoffer Solum, Karen Grøndalen, Vetle Sælen"
+date: "15 9 2021"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+bibliography: references.bib
+---
+
+## Introduksjon
+
+En av de mest sentrale faktorene for utholdenhets prestasjonen er det maksimale oksygenopptaket (VO2maks) @bassett2000 . VO2maks er bestemt av flere sentrale faktorer: lungenes kapasitet til å føre oksygen fra blodet, hjertets pumpekapasitet, volum, og sammensetning av blodet, og musklenes evne til å bruke oksygenet @bassett2000 .
+
+Reliabilitet kan bli definert som reproduserbarheten til testverdier, analyser eller andre målinger på gjentatte forsøk på de samme individene. Det finnes tre hoved variasjoner man må ta hensyn til når man snakker om reliabilitet, det er: deltakernes variasjon, endring i gjennomsnittet og rettest korrelasjon @hopkins2000. Deltakernes variasjon regnes ut gjennom standardavvik og standardfeil. Det kan komme fra biologiske forhold som kan variere mellom to tester. Utstyr kan og spille inn på dette, hvor det er støy ved målingene. Endring i gjennomsnitt kan man dele i to deler, det er tilfeldig endring og systematisk endring. Tilfeldig endring er støy i målinger og data innsamlingsfeil. Dette kan minimeres gjennom å ha mange tester, hvor da tilfeldige feilene vil spille mindre inn på resultatet. Systematisk endring er treningseffekten og læringseffekten man kan forvente mellom to tester, det handler om faktorene som spiller inn og kan gjøre test2, bedre enn test1. Korrelasjon i test2 handler om hvor godt test1 og test2 korrelerer, hvis man har bedre korrelasjon, har man og høyere reliabilitet mellom testene.
+
+## Metode
+
+I denne rapporten skal reliabiliteten estimeres mellom to VO2maks tester. Hvor test1 og test2 er gjennomført med en ukes mellomrom.
+
+VO2maks testen ble gjennomført med en standard VO2maks protokoll. Hvor stigningen var konstant, 10,5% for guttene og 5,5% for jentene. Startfart var gitt på forhånd hvor alle startet på 8 km/t. For hvert minutt som gikk, økte farten med 1 km/t, og slik fortsatte det til utmattelse. Underveis i testen ble det gitt verbal oppmuntring fra testleder, det var og testleder som justerte farten underveis. Testen ble gjennomført på en woodway løpemølle (4FRONT, wisconsin). Hele testen ble gjennomført med kontinuerlig oksygenmåling hvert 30. sekund. Oksygenmålingene ble gjennomført med en Vyntus CPX, mixing chamber (Vyntus CPX, Jaeger-CareFusion, UK). Ved målinger på Vyntus CPX ble det automatisk kalibrert for gass, volum og luftfuktighet før hver test. Oppvarmingen før testen var valgfri, og varte i 15 min. Underveis i oppvarmingen ble testprotokollen forklart for utøver, og eventuelle spørsmål om testen ble avklart. Under testen ble det registrert ml/min VO2. Umiddelbart etter testen ble det spurt om Borg skala 6-20 (RPE: @borg1970 ), det ble og notert ned hva siste belastning var og hvor lenge utøver løp på denne belastningen. Et minutt etter testen ble det målt laktat (La) gjennom et fingerstikk og analysert gjennom Biosen blodlaktatmåler (Biosen C-line, EKF Diagnostics, Barleben, Germany), HF ble og notert ned.
+
+Test2 ble gjennomført på samme måte som test1, hvor samme protokoll ble gjennomført på nytt.
+
+
+## Statistikk
+
+Alle statistiske beregninger ble gjort i RStudio (versjon RStudio 1.4.1717; R Foundation for Statistics Computing, Vienna, AT). Det ble regnet ut gjennomsnitt og standardavvik mellom test1 og test2. Det ble også regnet ut standardfeil for testen som et mål på reliabilitet.  
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(tidyverse)
+# Legger inn datasett fra excel
+Dat <- read_excel("Data/vo2maksTest.xlsx") %>%
+  mutate(diff = test2 - test1) %>%
+  # Regner ut prosentvis endring med sd
+  summarise(s = sd(diff),
+            te = s / sqrt(2),
+            m = mean(c(test1, test2)),
+            cv = (te / m) * 100) 
+
+
+
+
+
+cv <- round(Dat$cv, 2)
+
+Standardavik <- round(Dat$s, 2)
+
+```
+
+## Resultat og diskusjon
+
+Resultatene for studien er vist i figur 1. 
+
+Standardfeilen i studien var `r cv` %.
+
+Standardaviket i studien var `r Standardavik`
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, include=TRUE, results='hide', fig.cap= "Figur 1 viser resultater fra test 1 og 2"}
+
+
+library(tidyverse)
+library(readxl)
+
+
+ark3 <- read_excel("Data/vo2maksTestark2.xlsx")
+
+
+ark3
+
+# Lager boxplot per gruppe
+ggplot(ark3, aes(tid, vo2)) + geom_boxplot() + geom_jitter() +
+labs(x = "Tidspunkt",
+     y = "VO2 (ml/min)")
+
+```
+
+# Referanser

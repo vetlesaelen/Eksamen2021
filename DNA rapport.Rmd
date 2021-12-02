@@ -1,0 +1,67 @@
+---
+title: "Rapport-DNA"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+# Labbrapport DNA
+
+## DNA
+
+DNA inneholder bestemmende oppskrifter på hvordan en organisme skal fungere eller se ut @martinsen2020. Dette kan være alt fra fargen på øynene til en hund til blodtype hos mennesker og oppskriftene som bestemmer dette kalles gener. DNA kalles for arvestoff siden disse oppskriftene videreføres fra generasjon til generasjon @martinsen2020. Dette vil si at hvert menneske har både DNA fra sin mor og far. Når nye celler dannes ved celledeling må alt DNA kopiere seg slik at de nye cellene får helt likt DNA. Denne prosessen hvor DNA blir kopiert kalles for DNA- replikasjon @martinsen2020. Gene vi så etter i dette forsøket var Alfa-aktinin-3 r557x polymorfismen (ACTN-3 r557x), og det er er en av de viktigste polymorfismer assosiert med atletisk prestasjon @schadock2015 . Tilstedeværelsen av den dominerende R-allelen er assosiert med skjelettmuskulatur av full kraft ved kontraksjon. Homogenisering av X-allelen er assosiert med mer effektiv energidisponering.
+
+## Målemetoder
+
+Standardmetoden for å genotype polymorfismen (ACTN-3 r557x) er PCR. I denne metoden kopierer man innholdet man vil undersøke. I denne protokollen benyttet vi en enkel og mer kostnadseffektiv metode for å genotype denne polymorfismen ved en enkel PCR amplifisering. Det ble benyttet interne og eksterne primere for å stadfeste om henholdsvis r- allel og x- allel var tilstede. Denne protokollen er vist å være effektiv til å genotype denne polymorfismen, derfor ble den benyttet. @schadock2015.
+
+## Metode
+
+Blodprøve på 4 mL. - Overføre 3 mL blod til 15 mL tube og tilsett 12mL Reagent A, bland ved rotasjon rolig i 4 minutter\
+- Sentrifuger 3000g, 5 min, romtemp (22celcius) - Hell ut væsken men la cellepelleten være igjen - Tilsett 1mL Reagent B, sett i ristemaskin (vortex) - Tilsett 250µl (mikroliter) av 5M Sodium Perchlorate - vend om flere ganger\
+- Sett i 65celcius vannbad i 15-20min - Kjøl ned i romtemperatur - Tilsett 2mL med iskald chloroform - bland på vippebrett i 30-60 min - Sentrifuger på 2400g, 2 min - Overfør øvre fasen(sjikte) i en ren 15mL falcon med pipett - Prøven ut av fryseren, sett i sentrifuge på 2000g i 5 min - Pipetter ut etanolen, tilsett ny iskald etanol 2mL - 5 min i sentrifuge - Pipetter ut væsken - 1 min sentrifuge - Sikre at man får ut all etanol/væske - Overfør 1 ml TE buffer, bland med pipett, overfør til mindre prøverør - Programmer PC; benytt liten pipett til å overføre 1 mikroliter til flatt glass med hull i og sett inn i multiscann GO - se på grafene og tallene som kommer opp på PC - PCR - Klargjør gel til rød elektroforeses - Tilfør fargeløsning i DNA\
+- Tilfør running buffer over gel i rød elektroforeses (den boksen som gellen ligger i) - Løft opp kammen for å frigjøre brønner til DNA (1. brønn - stige/ladder, 2-\> DNA, siste: ladder) - Ta 10mikroliter ut av hver DNA beholder og overfør til brønnene (pumpe for å mikse før overføring) - Koble rød elektroforeses til strøm (konstant wolt 150, tid: 1 time) (DNA skal vandre til positiv pol) (sort ledning i sort hull (negativ), rød ledning i rødt hull (positiv)). @bartlett2003
+
+## Forventede resultater
+
+Som følge resultatene fra rapporten til @schadock2015 kunne vi forvente å finne eksterne primere på 690-bp et produkt som indekerer templatets kvalitet, interne primere på 413- bp som er et produkt av at R- alleen er tilstede og på 318-bp produkt hvis X- alleen er tilstede.
+
+![Bildet viser forventede resultater fra artikkelen til (Schadock et al. 2015), (690-bp kontroll, 318-bp X allele og 413-bp R allele)](images/forventede%20resultater.png)
+
+## Resultater
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, include=TRUE, results="hide", fig.cap = "Figuren viser"}
+#  Lager en data ramme av kjente distanser og molekylærvekter 
+ladder <- data.frame(dist = c(238, 348, 376,
+                              408, 447,  492,  
+                              553,    623,  722,
+                              780,    850,  932,  1030), 
+                     mw = c(1000, 900, 800, 
+                            700, 600, 500,
+                            400, 300, 250, 
+                            200, 150, 100, 50))
+            
+# Lager ny dataramme av ukjente verdier
+unknown <- data.frame(dist = c(434,   600,  689,
+                               429,   590, 676, 425, 587, 673, 593, 428, 675))
+# Fit the model
+cal <- lm(log(mw) ~ dist, data = ladder)
+# Check model performance, R^2 should be ~ 1.
+summary(cal)
+preds <- exp(predict(cal, newdata = unknown) )
+
+
+preds 
+
+```
+
+```{r}
+preds 
+```
+
+![Bildet viser resultatene vi fikk fra ![]()undersøkelsen.](images/Resultater.png)
+
+## Diskusjon
+
+Fra våre resultater kan man se at molekylærvekten ikke er eksakt slik den fremstår i rapporten til @schadock2015 (690-bp kontroll, 318-bp X allele og 413-bp R allele), men at relasjonen mellom vektene er nokså lik. Avviket kan komme av at bildet ikke h ar vært 100% horisontalt ved målingene, eller eventuelle feil gjort fra protokollen. Den første stigen er betydelig svakere enn de resterende og ser ut til å mange den øverste brønnen, mens de to neste har betydelig svakere øvre brønn enn de siste tre. Det kan komme av ulike årsaker, som pipetteringsfeil eller andre feil gjort når protokollen er utført. Det kan også ha skjedd en feil ved uttynningsprosessen. Det er også tydelig at de tre siste stigene er tilnærmet like hverandre, noe som kan tyde på at noe produkt fra en eller flere prøver er blitt overført til andre prøver og dermed påvirket resultatet.
